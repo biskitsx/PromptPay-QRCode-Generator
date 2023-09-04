@@ -19,8 +19,13 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
 
 app.post("/generate", (req: Request, res: Response, next: NextFunction) => {
     const amount = parseFloat(req.body.amount)
-    console.log(amount)
-    const mobileNumber = "0989054159"
+    if (amount == 0) {
+        return res.status(400).json({
+            msg: "can't use amout = 0",
+            statusCode: 400
+        })
+    }
+    const mobileNumber = "0982546225"
     const payload = generatePayload(mobileNumber, { amount })
     const option = {
         color: {

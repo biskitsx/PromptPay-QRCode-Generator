@@ -15,6 +15,9 @@ const config: Config = {
             },
         },
     },
+    daisyui: {
+        themes: ["dracula"]
+    },
     plugins: [daisyui],
 }
 export default config
